@@ -1,0 +1,15 @@
+.hero-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
+.hero-card h2 {
+  color: #333;
+  margin-bottom: 5px;
+}
+.hero-card p {
+  margin: 2px 0;
+}

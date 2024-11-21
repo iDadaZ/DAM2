@@ -1,0 +1,33 @@
+<div>
+  <div *ngIf="centros.length > 0; else noCentro">
+    <img [src]="centros[posicion].logo" alt="Logo del centro" />
+    <h2>{{ centros[posicion].nombre }}</h2>
+    <p><strong>Localidad:</strong> {{ centros[posicion].localidad }}</p>
+    <ul>
+      <li *ngFor="let ciclo of centros[posicion].ciclos">
+        {{ ciclo }}
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noCentro>
+    <p>No hay centro en la lista.</p>
+  </ng-template>
+
+  <div>
+    <button (click)="atras()" [disabled]="posicion === 0">atras</button>
+    <button (click)="paLante()" [disabled]="posicion === centros.length - 1 || centros.length === 0">
+      Posterior
+    </button>
+    <br>
+    <button (click)="borrar()" [disabled]="centros.length === 0">borrar</button>
+    <button (click)="anyadir()" [disabled]="array.length === 0">anyadir</button>
+  </div>
+
+  <div>
+    <h3>array de Centro Eliminados</h3>
+    <ul>
+      <li *ngFor="let centro of array">{{ centro.nombre }}</li>
+    </ul>
+  </div>
+</div>

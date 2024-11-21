@@ -1,0 +1,11 @@
+<div class = all >
+  <div class= 'escenario-card' *ngIf="escenarios.length > 0">
+    <img [src]="escenarios[posicion]?.logo" alt="Sin imagen" />
+    <h2>{{ escenarios[posicion]?.nombre }}</h2>
+  </div>
+
+  <div class="controls">
+    <button *ngIf="posicion > 0" (click)="retroceder()">Retroceder</button>
+    <button *ngIf="posicion < escenarios.length - 1" (click)="avanzar()">Avanzar</button>
+  </div>
+</div>
