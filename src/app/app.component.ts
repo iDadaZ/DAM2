@@ -8,10 +8,8 @@ import { HeroesModule } from './heroes/heroes.module';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports:[ ContadorComponent, CentroComponent, HeroesModule]
+  imports: [ContadorComponent, CentroComponent, HeroesModule],
 })
-
 export class AppComponent {
-  public title : string = 'El work del dada'
+  public title: string = 'El work del dada pero desde casa';
 }
-
