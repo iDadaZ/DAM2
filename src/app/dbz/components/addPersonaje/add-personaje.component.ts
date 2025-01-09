@@ -22,7 +22,11 @@ export class addPersonaje {
 
     this.onNewPersonaje.emit(this.personaje);
 
-    this.personaje.nombre = '';
-    this.personaje.fuerza = 0;
+    this.personaje={
+      nombre: "",
+      fuerza: 0
+    };
+    //this.personaje.nombre = '';
+    //this.personaje.fuerza = 0;
   }
 }

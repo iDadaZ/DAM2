@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Personaje } from '../interfaces/personaje.interface';
+import { DbzService } from '../services/dbz.service';
+import { addPersonaje } from '../components/addPersonaje/add-personaje.component';
 
 @Component({
   standalone: false,
@@ -7,23 +9,17 @@ import { Personaje } from '../interfaces/personaje.interface';
   templateUrl: './main-page.component.html'
 })
 
-export class MainPageComponent implements OnInit {
-  public personajes: Personaje[] = [{
+export class MainPageComponent{
+  constructor( private DbzService: DbzService){}
 
-    nombre : 'Goku',
-    fuerza : 100000
-  },
-{
-  nombre : 'Krilin',
-  fuerza : 5000
-}];
+  get personajes():Personaje[]{
+    return this.DbzService.personajes;
+  }
 
-public onNewPersonaje(personaje: Personaje): void {
-  console.log('MainPage');
-  console.log(personaje);
-}
-
-  constructor() { }
-
-  ngOnInit() { }
+  OnDeletePersonaje(id: String): void{
+    this.DbzService.DeletePersonajeId(id);
+  }
+  onNewPersonaje(Personaje : Personaje):void{
+    this.DbzService.addPersonaje(Personaje);
+  }
 }
